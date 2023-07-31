@@ -1,11 +1,6 @@
 
-FROM node
 
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
+FROM nginx:latest
 
-COPY . .
-EXPOSE 8080
 
-CMD [ "node", "miwebapp.js" ]
+COPY . /usr/share/nginx/html
