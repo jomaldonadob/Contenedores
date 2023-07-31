@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: holamundoYO
 spec:
-  replicas: 2
+  replicas: 3 
   selector:
     matchLabels:
       app: holamundoYO
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: holamundoYO
-        image: holamundoYO
+        image: holamundoYO:v2 
         ports:
         - containerPort: 80
