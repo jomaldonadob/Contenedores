@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muñeco Movimiento</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+
+    .head,
+    .body,
+    .arm,
+    .leg {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #00bfff;
+      border-radius: 50%;
+    }
+
+    .head {
+      top: 0;
+      left: 75px;
+    }
+
+    .body {
+      top: 60px;
+      left: 75px;
+    }
+
+    .arm {
+      top: 60px;
+    }
+
+    .arm.left {
+      left: -50px;
+    }
+
+    .arm.right {
+      right: -50px;
+    }
+
+    .leg {
+      top: 160px;
+    }
+
+    .leg.left {
+      left: 25px;
+    }
+
+    .leg.right {
+      right: 25px;
+    }
+
+    @keyframes moveArms {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(60deg);
+      }
+    }
+
+    @keyframes moveLegs {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(-60deg);
+      }
+    }
+
+    .arm {
+      animation: moveArms 2s infinite;
+    }
+
+    .leg {
+      animation: moveLegs 2s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="head"></div>
+    <div class="body"></div>
+    <div class="arm left"></div>
+    <div class="arm right"></div>
+    <div class="leg left"></div>
+    <div class="leg right"></div>
+  </div>
+</body>
+</html>
